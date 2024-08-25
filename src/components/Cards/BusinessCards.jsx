@@ -24,9 +24,9 @@ const BusinessCard = ({
         <div className="row justify-content-start ">
           {/* Business Details */}
 
-          <div className="col-md-5  justify-content-start">
+          <div className="col-md-5 justify-content-start">
             <div className="m-2 justify-content-between title d-flex">
-              <h5 className="card-title">{name}</h5>
+              <h5 className="card-title text-start">{name}</h5>
               <i className="bi text-success bi-shield-check"></i>
               <p className="badge fw-bolder text-success ">Verified</p>
             </div>
@@ -64,11 +64,11 @@ const BusinessCard = ({
         {/* Rating and Reviews */}
         <div className="mt-4">
           <div className="d-flex justify-content-between">
-            <p className="mb-0">{reviewsCount} Reviews</p>
+            <p className=" fw-semibold fs-6">{reviewsCount} Google Reviews</p>
           </div>
 
           {/* Reviews */}
-          <div className="mt-3">
+          <div className="mt-0">
             <CustomCarousel cards={reviews} />
           </div>
         </div>

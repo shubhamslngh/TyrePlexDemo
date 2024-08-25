@@ -1,28 +1,55 @@
+/* .reviews-card styling */
 .reviews-card {
   border: 1px solid #ddd;
   border-radius: 0.25rem;
   box-shadow: 0 0 0.125rem rgba(0,0,0,0.1);
   overflow: hidden;
-  padding: 0.25rem;
-  height:35px;
   padding: 10px 8px;
   text-align: center;
-  max-width: 16.66%;
-
+  max-width: 100%; /* Ensure it adapts to container width */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
+/* Responsive styling for .reviews-card */
+@media (min-width: 1200px) {
+  .reviews-card {
+    max-width: 16.66%; /* 1/6th of container width for large screens */
+  }
+}
+
+@media (max-width: 992px) {
+  .reviews-card {
+    max-width: 25%; /* 1/4th of container width for medium screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-card {
+    max-width: 33.33%; /* 1/3rd of container width for small screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .reviews-card {
+    max-width: 100%; /* Full width for very small screens */
+  }
+}
+
+/* .deals-img styling */
 .deals-img {
-  width: 20%;
-  height: 50%;
-  object-fit: fit;
+  width: 100%; /* Make image width responsive */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover; /* Ensure image covers the area without distortion */
 }
 
+/* .reviews-card-body styling */
 .reviews-card-body {
-  padding: 0.125rem;
+  padding: 0.5rem; /* Increase padding for better spacing */
 }
 
+/* .deals-card-title styling */
 .deals-card-title {
-  font-size: 1rem;
-  font-weight: light;
+  font-size: 0.875rem; /* Adjust font size for better readability */
+  font-weight: 400; /* Light weight */
   color: #333;
 }

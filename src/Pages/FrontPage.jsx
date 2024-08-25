@@ -11,7 +11,7 @@ export default function FrontPage() {
   return (
     <div>
       <BusinessCard />
-      <div className="container mt-3 mb-4  border shadow-sm">
+      <div className="container  mt-3 mb-4  border shadow-sm">
         <h6 className='p-2 fw-semibold text-start '>Deals In</h6>
         <CustomCarousel cards={cards} />
       </div>

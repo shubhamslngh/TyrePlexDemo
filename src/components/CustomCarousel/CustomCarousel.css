@@ -11,7 +11,7 @@
 /* Scrollable area */
 .carousel {
   display: flex;
-  overflow-x: scroll;
+  overflow-x: auto;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
   padding: 10px 0;
@@ -29,7 +29,7 @@
 /* Individual card styling */
 .carousel-card {
   flex: 0 0 auto;
-  width: 250px; /* Adjust width as needed */
+  width: 250px; /* Default width */
   margin-right: 16px; /* Space between cards */
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -54,7 +54,7 @@
   cursor: pointer;
   z-index: 1;
   transition: background-color 0.3s;
-  display:none;
+  display: none; /* Hide by default */
 }
 
 .scroll-button:hover {
@@ -67,4 +67,23 @@
 
 .scroll-button.right {
   right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .carousel-card {
+    width: 200px; /* Adjust width for smaller screens */
+    margin-right: 12px; /* Adjust space between cards */
+  }
+  
+  .scroll-button {
+    display: block; /* Show navigation buttons on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-card {
+    width: 150px; /* Adjust width for very small screens */
+    margin-right: 8px; /* Adjust space between cards */
+  }
 }

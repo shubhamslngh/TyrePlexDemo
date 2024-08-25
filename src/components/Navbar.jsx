@@ -5,14 +5,14 @@ import "./CustomNavbar.css"; // Import custom CSS
 
 export default function CustomNavbar() {
   return (
-    <nav className="navbar navbar-expand-lg px-4 navbar-light bg-light">
-      <div className="container-fluid">
+    <nav className="navbar navbar-expand-lg position-sticky px-5 navbar-light bg-white">
+      <div className="container-fluid ">
         {/* Brand Logo */}
         <a className="navbar-brand" href="#">
           <img
             src="https://cdn.tyreplex.net/themes/moonlight/images/TP-logo.png?tr=w-150,q-60"
             alt="TyrePlex"
-            width="120"
+            width="150"
             height="auto"
           />
         </a>
@@ -42,7 +42,9 @@ export default function CustomNavbar() {
                 aria-expanded="false">
                 Bike Tyres
               </a>
-              <ul className="dropdown-menu " aria-labelledby="bikeTyresDropdown">
+              <ul
+                className="dropdown-menu "
+                aria-labelledby="bikeTyresDropdown">
                 <li>
                   <a
                     className="dropdown-item"
