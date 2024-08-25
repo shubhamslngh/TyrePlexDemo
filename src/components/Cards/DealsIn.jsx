@@ -42,16 +42,19 @@ export default function DealsIn() {
   ];
 
   return deals.map((deal, index) => (
-        <div className="card-deals col-md-4 mb-4 mx-3" key={index}>
-          <a
-            href={deal.link}
-            title={deal.title}
-            className="text-decoration-none">
-            <img src={deal.image} className="deals-img card-img-top" alt={deal.title} />
-            <div className="deals-card-body">
-              <p className="deals-card-title">{deal.title}</p>
-            </div>
-          </a>
+    <div
+      className="col-5 col-xs-1 col-sm-2 card-deals col-md-4 mb-4 mx-3"
+      key={index}>
+      <a href={deal.link} title={deal.title} className="text-decoration-none">
+        <img
+          src={deal.image}
+          className="deals-img card-img-top"
+          alt={deal.title}
+        />
+        <div className="deals-card-body">
+          <p className="deals-card-title">{deal.title}</p>
         </div>
-      ))
+      </a>
+    </div>
+  ));
 }

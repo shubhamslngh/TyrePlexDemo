@@ -42,10 +42,14 @@ const BusinessCard = ({
                 {reviewsCount} Reviews
               </p>
             </div>
-            <p className="col-12 text-start fw-semibold  d-flex gap-3 subtitle">
+            <p
+              style={{ fontSize: "15px" }}
+              className="col-12 text-start fw-semibold d-flex gap-3 subtitle">
               <i className="bi bi-geo-alt"></i> {address}
             </p>
-            <p className="d-flex gap-3 fw-semibold card-text">
+            <p
+              style={{ fontSize: "15px" }}
+              className="d-flex gap-3 fw-light card-text">
               <i className="bi bi-clock"></i> {hours}
             </p>
 

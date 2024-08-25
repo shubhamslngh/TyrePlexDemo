@@ -42,24 +42,20 @@ export default function Reviews() {
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
   };
 
-  return (
-      reviews.map((review, index) => (
-        <div key={index} className="card mx-1 col-md-4 mb-4">
-          <div className="reviews-card-body">
-            <div className="d-flex align-items-center m-2">
-              <div className="profile-icon bg-primary p-2 text-white rounded-circle d-flex align-items-center justify-content-center me-2">
-                {review.reviewer.charAt(0)}
-              </div>
-              <div className="d-flex justify-content-between w-100">
-                <h6 className="mb-1 card-title">{review.reviewer}</h6>
-                <small>{review.date}</small>
-              </div>
-            </div>
-            <p className="mb-1 card-text">
-              {truncateReview(review.review, 150)}
-            </p>
+  return reviews.map((review, index) => (
+    <div className="card col-5 col-md-4 col-xs-1 mb-4 mx-3" key={index}>
+      <div className="reviews-card-body">
+        <div className="d-flex align-items-center m-2">
+          <div className="profile-icon bg-primary p-2 text-white rounded-circle d-flex align-items-center justify-content-center me-2">
+            {review.reviewer.charAt(0)}
+          </div>
+          <div className="d-flex justify-content-between w-100">
+            <h6 className="mb-1 card-title">{review.reviewer}</h6>
+            <small>{review.date}</small>
           </div>
         </div>
-      ))
-  );
+        <p className="mb-1 card-text">{truncateReview(review.review, 150)}</p>
+      </div>
+    </div>
+  ));
 }
