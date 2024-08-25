@@ -1,0 +1,30 @@
+.card-deals {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.125rem rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 0.25rem;
+  height:35px;
+  min-height: 86px;
+  max-height: 86px;
+  padding: 10px 8px;
+  text-align: center;
+  max-width: 16.66%;
+
+}
+
+.deals-img {
+  width: 20%;
+  height: 50%;
+  object-fit: fit;
+}
+
+.deals-card-body {
+  padding: 0.125rem;
+}
+
+.deals-card-title {
+  font-size: 1rem;
+  font-weight: light;
+  color: #333;
+}

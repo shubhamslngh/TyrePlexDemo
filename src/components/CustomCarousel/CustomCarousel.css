@@ -1,0 +1,70 @@
+/* CustomCarousel.css */
+
+/* Container for the entire carousel */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+
+/* Scrollable area */
+.carousel {
+  display: flex;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 10px 0;
+}
+
+/* Hide scrollbar for better aesthetics */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+
+/* Individual card styling */
+.carousel-card {
+  flex: 0 0 auto;
+  width: 250px; /* Adjust width as needed */
+  margin-right: 16px; /* Space between cards */
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Example card content styling (optional) */
+.carousel-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Navigation buttons */
+.scroll-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+  transition: background-color 0.3s;
+  display:none;
+}
+
+.scroll-button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.scroll-button.left {
+  left: 10px;
+}
+
+.scroll-button.right {
+  right: 10px;
+}

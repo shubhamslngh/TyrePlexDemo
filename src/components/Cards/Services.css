@@ -1,0 +1,30 @@
+.card-services {
+  border: 1px solid #ddd;
+  border-radius: 0.25rem;
+  box-shadow: 0 0 0.125rem rgba(0,0,0,0.1);
+  overflow: hidden;
+  padding: 0.25rem;
+  min-height: auto;
+  max-height: auto;
+  padding: 10px 8px;
+  text-align: center;
+  max-width: 16.66%;
+
+}
+
+.services-img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: fit;
+}
+
+.services-card-body {
+  padding: 0.125rem;
+}
+
+.services-card-title {
+  padding:1rem;
+  font-size: 1rem;
+  font-weight: light;
+  color: #000;
+}

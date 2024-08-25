@@ -1,0 +1,16 @@
+/* CustomNavbar.css */
+
+/* Open dropdowns on hover */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; /* Remove space between the dropdown and the parent */
+}
+
+/* Ensure the dropdown toggler's background doesn't change */
+.nav-link.dropdown-toggle::after {
+  display: none; /* Remove the default caret */
+}
+
+a {
+  font-weight: bold;
+}
