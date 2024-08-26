@@ -1,11 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./CustomNavbar.css"; // Import custom CSS
 
 export default function CustomNavbar() {
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsCollapsed(true);
+      } else {
+        setIsCollapsed(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    // Cleanup event listener on component unmount
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <nav className="navbar navbar-expand-lg shadow-sm px-5 navbar-light bg-white sticky-top">
+    <nav
+      className={`navbar navbar-expand-lg shadow-sm px-5 navbar-light bg-white ${
+        isCollapsed ? "collapsed" : ""
+      }`}>
       <div className="container-fluid">
         {/* Brand Logo */}
         <a className="navbar-brand" href="#">
@@ -102,7 +121,9 @@ export default function CustomNavbar() {
                 aria-expanded="false">
                 Tyre Pressure
               </a>
-              <ul className="dropdown-menu" aria-labelledby="tyrePressureDropdown">
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="tyrePressureDropdown">
                 <li>
                   <a className="dropdown-item" href="#">
                     Option 1
@@ -125,7 +146,9 @@ export default function CustomNavbar() {
                 aria-expanded="false">
                 Commercial Tyres
               </a>
-              <ul className="dropdown-menu" aria-labelledby="commercialTyresDropdown">
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="commercialTyresDropdown">
                 <li>
                   <a className="dropdown-item" href="#">
                     Option 1
@@ -148,7 +171,9 @@ export default function CustomNavbar() {
                 aria-expanded="false">
                 Accessories
               </a>
-              <ul className="dropdown-menu" aria-labelledby="accessoriesDropdown">
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="accessoriesDropdown">
                 <li>
                   <a className="dropdown-item" href="#">
                     Option 1

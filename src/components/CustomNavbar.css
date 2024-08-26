@@ -24,3 +24,14 @@ a {
   position: sticky;
   top: 0;
 }
+/* CustomNavbar.css */
+.navbar.collapsed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030; /* Ensure it stays on top of other content */
+  transition: all 0.6s ease;
+}
+
+/* Add any additional styling needed for the collapsed state */
