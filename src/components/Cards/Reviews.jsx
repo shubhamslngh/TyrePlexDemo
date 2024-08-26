@@ -46,7 +46,7 @@ export default function Reviews() {
     <div className="card col-5 col-md-4 col-xs-1 mb-4 mx-3" key={index}>
       <div className="reviews-card-body">
         <div className="d-flex align-items-center m-2">
-          <div className="profile-icon bg-primary p-2 text-white rounded-circle d-flex align-items-center justify-content-center me-2">
+          <div className="profile-icon bg-primary  p-2 text-white rounded-circle d-flex align-items-center justify-content-center me-2">
             {review.reviewer.charAt(0)}
           </div>
           <div className="d-flex justify-content-between w-100">

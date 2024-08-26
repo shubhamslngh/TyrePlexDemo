@@ -24,20 +24,21 @@ const BusinessCard = ({
         <div className="row justify-content-start ">
           {/* Business Details */}
 
-          <div className="col-md-5 justify-content-start">
-            <div className="m-2 justify-content-between title d-flex">
-              <h5 className="card-title text-start">{name}</h5>
+          <div className="mt-2 col-auto col-md-5">
+            <div className=" me-1 title d-flex">
+              <h5 className="col-md-auto me-auto card-title text-start">{name}</h5>
               <i className="bi text-success bi-shield-check"></i>
-              <p className="badge fw-bolder text-success ">Verified</p>
+              <p className="fw-light text-success ">Verified</p>
             </div>
             <div className="d-flex mb-2">
-              <p className="badge bg-success me-3 mb-0">{rating}</p>
+              <span className="ratingNumber-bg mt-2 me-1">{rating}</span>
               {stars.map((index) => (
                 <i
                   key={index}
                   style={{ color: "gold", padding: "2px" }}
                   className="bi mx-2 bi-star-fill"></i>
               ))}
+
               <p className="subtitle text-decoration-underline mb-0">
                 {reviewsCount} Reviews
               </p>

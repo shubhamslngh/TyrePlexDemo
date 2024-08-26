@@ -5,7 +5,7 @@ import "./CustomNavbar.css"; // Import custom CSS
 
 export default function CustomNavbar() {
   return (
-    <nav className="navbar navbar-expand-lg position-sticky px-5 navbar-light bg-white">
+    <nav className="navbar navbar-expand-lg  px-5 navbar-light bg-white">
       <div className="container-fluid ">
         {/* Brand Logo */}
         <a className="navbar-brand" href="#">

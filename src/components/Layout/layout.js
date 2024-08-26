@@ -5,7 +5,7 @@ export default function Layout
   () {
   return (
     <div>
-      <Navbar />
+      <Navbar className="sticky-navbar" />
     </div>
   )
 }

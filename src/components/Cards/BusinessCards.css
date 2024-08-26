@@ -1,0 +1,10 @@
+.ratingNumber-bg{
+    background-color: #4CA72C;
+    margin-right: 3px;
+    color: #fff;
+    padding: 0 5px;
+    border-radius: 3px;
+    display: inline-flex;
+    align-items: center;
+    height: 15px;
+}

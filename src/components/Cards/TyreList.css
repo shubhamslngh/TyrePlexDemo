@@ -1,0 +1,75 @@
+.tyre-card {
+  margin: 1px;
+  width: 18rem;
+}
+.tyre-card:hover{
+    box-shadow: 0 0 0.125rem rgba(0,0,0,0.1);
+}
+.filter-section {
+  margin-bottom: 20px;
+}
+.brand-img{
+  height:auto;
+  width:4rem;
+  padding:1px;
+}
+.review-tyre{
+  font-size:0.7rem;
+}
+.tyre-type, .tyre-size{
+  font-size:0.7rem;
+}
+.tyre-card {
+  position: relative;
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+  height: 250px;
+  width: full;
+  
+}
+
+.tyre-img {
+  position: absolute;
+  right: 10px;
+    bottom: -33px;
+    width: 180px;
+    right: -70px;
+    overflow: hidden;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+}
+
+.card-subtitle {
+  font-size: 1rem;
+  color: #888;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.rating span {
+  margin-right: 0.5rem;
+}
+
+.offer-text {
+  color: green;
+}
+
+.tubeless-text {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+}

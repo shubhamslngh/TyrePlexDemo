@@ -53,3 +53,7 @@
   font-weight: 400; /* Light weight */
   color: #333;
 }
+.profile-icon{
+  width:1.5rem;
+  height:1.5rem;
+}

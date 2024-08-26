@@ -5,11 +5,11 @@ import FrontPage from './Pages/FrontPage';
 import Footer from './components/Footer';
 function App() {
   return (
-    <div className="App">
-      <Layout />
-      <FrontPage />
-      <Footer/>
-    </div>
+      <div className="App">
+        <Layout />
+        <FrontPage />
+        <Footer />
+      </div>
   );
 }
 

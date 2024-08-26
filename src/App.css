@@ -12,6 +12,12 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.sticky-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures the navbar is above other content */
+  background-color: #fff; /* Optional: Set a background color if needed */
+}
 
 .App-header {
   background-color: #282c34;
@@ -27,7 +33,11 @@
 .App-link {
   color: #61dafb;
 }
-
+.app-background {
+  background-color: #000; /* Change this to your desired background color */
+  min-height: 100vh; 
+  padding: 20px; /* Optional: Add padding if needed */
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
