@@ -5,8 +5,8 @@ import "./CustomNavbar.css"; // Import custom CSS
 
 export default function CustomNavbar() {
   return (
-    <nav className="navbar navbar-expand-lg  px-5 navbar-light bg-white">
-      <div className="container-fluid ">
+    <nav className="navbar navbar-expand-lg shadow-sm px-5 navbar-light bg-white sticky-top">
+      <div className="container-fluid">
         {/* Brand Logo */}
         <a className="navbar-brand" href="#">
           <img
@@ -30,8 +30,38 @@ export default function CustomNavbar() {
         </button>
 
         {/* Navbar links with dropdowns */}
-        <div className="collapse  navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav mx-auto">
+            <li className="nav-item dropdown">
+              <a
+                className="nav-link dropdown-toggle"
+                href="#"
+                id="bikeTyresDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Car Tyres
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="bikeTyresDropdown">
+                <li>
+                  <a
+                    className="dropdown-item"
+                    href="//www.tyreplex.com/bike-tyres/mrf">
+                    MRF Tyres
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    Apollo Tyres
+                  </a>
+                </li>
+                <li>
+                  <a className="dropdown-item" href="#">
+                    CEAT Tyres
+                  </a>
+                </li>
+              </ul>
+            </li>
             <li className="nav-item dropdown">
               <a
                 className="nav-link dropdown-toggle"
@@ -42,9 +72,7 @@ export default function CustomNavbar() {
                 aria-expanded="false">
                 Bike Tyres
               </a>
-              <ul
-                className="dropdown-menu "
-                aria-labelledby="bikeTyresDropdown">
+              <ul className="dropdown-menu" aria-labelledby="bikeTyresDropdown">
                 <li>
                   <a
                     className="dropdown-item"
@@ -74,9 +102,7 @@ export default function CustomNavbar() {
                 aria-expanded="false">
                 Tyre Pressure
               </a>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="tyrePressureDropdown">
+              <ul className="dropdown-menu" aria-labelledby="tyrePressureDropdown">
                 <li>
                   <a className="dropdown-item" href="#">
                     Option 1
@@ -99,9 +125,7 @@ export default function CustomNavbar() {
                 aria-expanded="false">
                 Commercial Tyres
               </a>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="commercialTyresDropdown">
+              <ul className="dropdown-menu" aria-labelledby="commercialTyresDropdown">
                 <li>
                   <a className="dropdown-item" href="#">
                     Option 1
@@ -124,9 +148,7 @@ export default function CustomNavbar() {
                 aria-expanded="false">
                 Accessories
               </a>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="accessoriesDropdown">
+              <ul className="dropdown-menu" aria-labelledby="accessoriesDropdown">
                 <li>
                   <a className="dropdown-item" href="#">
                     Option 1

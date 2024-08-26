@@ -14,3 +14,13 @@
 a {
   font-weight: bold;
 }
+.nav-item{
+  font-weight: bold;
+  font-size: 0.85rem;
+
+}
+.navbar{
+    position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
