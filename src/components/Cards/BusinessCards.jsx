@@ -1,15 +1,19 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./BusinessCards.css";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Button,
+} from "@nextui-org/react";
 import Images from "./Images";
 import CustomCarousel from "../CustomCarousel/CustomCarousel";
 import Reviews from "./Reviews";
-import "bootstrap-icons/font/bootstrap-icons.css";
 
 const BusinessCard = ({
   name = "SHREE HEMKUNT TYRES AND SERVICES",
   address = "PLOT NUMBER-09 GROUND FLOOR CISF CAMPUS ROAD, AHINSA KHAND-02 INDIRAPURAM, Ghaziabad, Uttar Pradesh, 201014",
-  hours = "Open - Monday   to   Sunday - 10:00AM to 8:00PM",
+  hours = "Open - Monday to Sunday - 10:00AM to 8:00PM",
   reviewsCount = 2278,
   rating = 4.9,
 }) => {
@@ -17,68 +21,53 @@ const BusinessCard = ({
   const reviews = <Reviews />;
   const stars = Array.from({ length: Math.floor(rating) }, (_, index) => index);
 
-  console.log("cards", Images);
   return (
-    <div className="container mt-3 mb-4  border shadow-sm">
-      <div className="row card-body ">
-        <div className="row justify-content-start ">
-          {/* Business Details */}
-
-          <div className="mt-2 col-auto col-md-5">
-            <div className=" me-1 title d-flex">
-              <h5 className="col-md-auto me-auto card-title text-start">{name}</h5>
-              <i className="bi text-success bi-shield-check"></i>
-              <p className="fw-light text-success ">Verified</p>
-            </div>
-            <div className="d-flex mb-2">
-              <span className="ratingNumber-bg mt-2 me-1">{rating}</span>
-              {stars.map((index) => (
-                <i
-                  key={index}
-                  style={{ color: "gold", padding: "2px" }}
-                  className="bi mx-2 bi-star-fill"></i>
-              ))}
-
-              <p className="subtitle text-decoration-underline mb-0">
-                {reviewsCount} Reviews
-              </p>
-            </div>
-            <p
-              style={{ fontSize: "15px" }}
-              className="col-12 text-start fw-semibold d-flex gap-3 subtitle">
-              <i className="bi bi-geo-alt"></i> {address}
-            </p>
-            <p
-              style={{ fontSize: "15px" }}
-              className="d-flex gap-3 fw-light card-text">
-              <i className="bi bi-clock"></i> {hours}
-            </p>
-
-            {/* Get Directions Button */}
-            <button className="btn btn-outline-danger d-flex w-20  mb-1">
-              Get Directions
-            </button>
-          </div>
-
-          {/* Images Carousel */}
-          <div className="col-md-7">
-            <CustomCarousel cards={cards} />
-          </div>
+    <Card className="m-1 shadow-md p-1 rounded-md bg-slate-100">
+      {/* Main card header */}
+      <CardHeader className="flex flex-col md:items-start sm:items-center bg-black rounded-t-lg ">
+        <h5 className="text-xl font-semibold text-white">{name}</h5>
+        <div className="flex items-center text-sm text-green-300">
+          <i className="bi bi-shield-check"></i>
+          <span className="ml-1">Verified</span>
         </div>
+      </CardHeader>
 
-        {/* Rating and Reviews */}
-        <div className="mt-4">
-          <div className="d-flex justify-content-between">
-            <p className=" fw-semibold fs-6">{reviewsCount} Google Reviews</p>
+      {/* Nested card for business details */}
+      <Card className="bg-gray-100 shadow-sm text-black w-auto mb-2 rounded-t-none rounded-b-lg">
+        <CardBody>
+          <p className="text-sm font-medium ">
+            <i className="bi bi-geo-alt mr-1"></i> {address}
+          </p>
+          <p className="text-sm font-light text-gray-800">
+            <i className="bi bi-clock mr-1"></i> {hours}
+          </p>
+          <div className=" mb-1">
+            <span className="text-lg font-bold text-yellow-500">{rating}</span>
+            {stars.map((_, index) => (
+              <i
+                key={index}
+                className="bi bi-star-fill text-yellow-500 ml-1"></i>
+            ))}
+            <span className="text-blue-500 underline ml-2">
+              {reviewsCount} Reviews
+            </span>
           </div>
+          <Button variant="flat" color="error" className="flex-auto bg-red-500 ">
+            Get Directions
+          </Button>
+        </CardBody>
+      </Card>
 
-          {/* Reviews */}
-          <div className="mt-0">
-            <CustomCarousel cards={reviews} />
-          </div>
-        </div>
-      </div>
-    </div>
+      {/* Nested card for images carousel */}
+
+      <CustomCarousel cards={cards} className="mb-4" />
+
+      {/* Nested card for reviews */}
+      <Card className="bg-white m-1 text-black flex-auto shadow-sm place-self-start p-1 rounded-md">
+          {reviewsCount} Google Reviews
+      </Card>
+      <CustomCarousel cards={reviews} className="mt-2" />
+    </Card>
   );
 };
 

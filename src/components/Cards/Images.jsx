@@ -26,7 +26,7 @@ export default function Images() {
     ];
 
     return images.map((image, index) => (
-        <div className="card col-5 col-md-4 col-xs-1 mb-4 mx-3 shadow-md" key={index}>
+        <div className="card col-5 col-md-4 col-xs-1 mx-1 shadow-md" key={index}>
             <div className="card">
                 <img src={image.src} className="card-img-top" alt={image.alt} />
             </div>

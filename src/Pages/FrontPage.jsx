@@ -1,29 +1,40 @@
-import React from 'react'
-import BusinessCard from '../components/Cards/BusinessCards'
-import DealsIn from '../components/Cards/DealsIn'
-import "bootstrap/dist/css/bootstrap.min.css";
-import CustomCarousel from '../components/CustomCarousel/CustomCarousel';
-import Services from '../components/Cards/Services';
-import TyreList from '../components/Cards/TyreList';
+import React from "react";
+import BusinessCard from "../components/Cards/BusinessCards";
+import DealsIn from "../components/Cards/DealsIn";
+import CustomCarousel from "../components/CustomCarousel/CustomCarousel";
+import Services from "../components/Cards/Services";
+import TyreList from "../components/Cards/TyreList";
+
 export default function FrontPage() {
-  const cards = <DealsIn />
-  const services = <Services />;
-  
+  const dealsInContent = <DealsIn />;
+  const servicesContent = <Services />;
+
   return (
-    <div>
+    <div className="p-1">
+      {/* Business Card Component */}
       <BusinessCard />
-      <div className="container  mt-3 mb-4  border shadow-sm">
-        <h6 className="p-2 fw-semibold text-start ">Deals In</h6>
-        <CustomCarousel cards={cards} />
-      </div>
-      <div className="container mt-3 mb-4 justify-content-start border shadow-sm">
-        <h6 className="p-2 fw-semibold text-start">Services</h6>
-        <CustomCarousel cards={services} />
-      </div>
-      <div className="container mt-3 mb-4 justify-content-start">
-        <h6 className="p-2 fw-semibold text-start">Tyre sold by this Dealer.</h6>
-        <TyreList/>
-      </div>
+
+      {/* Deals Section */}
+      <section className="grid grid-rows-[auto,1fr] mt-1 p-1">
+        <h6 className="text-black text-lg font-medium mb-2">Deals In</h6>
+        <div className="overflow-hidden">
+          <CustomCarousel cards={dealsInContent} />
+        </div>
+      </section>
+
+      {/* Services Section */}
+      <section className="grid grid-rows-[auto,1fr] mt-1 p-1">
+        <h6 className="text-lg font-medium">Services</h6>
+        <CustomCarousel cards={servicesContent} />
+      </section>
+
+      {/* Tyre List Section */}
+      <section className="grid grid-rows-[auto,1fr] mt-1 p-1">
+        <h6 className="text-lg font-medium">
+          Tyres Sold by This Dealer
+        </h6>
+        <TyreList />
+      </section>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import "./CustomCarousel.css"; // Import the CSS file
+import { Card, Text } from "@nextui-org/react";
 
 const CustomCarousel = ({ cards }) => {
   const carouselRef = useRef(null);
@@ -25,19 +25,25 @@ const CustomCarousel = ({ cards }) => {
   };
 
   return (
-    <div className="carousel-container">
+    <div className="relative overflow-hidden">
       {/* Left Scroll Button */}
-      <button className="scroll-button left" onClick={scrollLeft}>
+      <button
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full shadow-md p-2 z-10 hover:bg-gray-200 transition duration-300"
+        onClick={scrollLeft}>
         &#10094;
       </button>
 
       {/* Scrollable Carousel */}
-      <div className="carousel" ref={carouselRef}>
-        {cards} {/* Directly render the array of JSX elements */}
+      <div
+        className="flex space-x-4 overflow-x-auto py-4 scrollbar-hidden"
+        ref={carouselRef}>
+        {cards}
       </div>
 
       {/* Right Scroll Button */}
-      <button className="scroll-button right" onClick={scrollRight}>
+      <button
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white text-black rounded-full shadow-md p-2 z-10 hover:bg-gray-200 transition duration-300"
+        onClick={scrollRight}>
         &#10095;
       </button>
     </div>

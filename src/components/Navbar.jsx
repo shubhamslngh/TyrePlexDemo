@@ -1,226 +1,112 @@
-import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./CustomNavbar.css"; // Import custom CSS
+import React from "react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  NavbarMenuToggle,
+  NavbarMenu,
+  NavbarMenuItem,
+  Link,
+  Button,
+} from "@nextui-org/react";
+// Import your custom logo component here
+// import { YourLogo } from "./YourLogo.jsx";
 
-export default function CustomNavbar() {
-  const [isCollapsed, setIsCollapsed] = useState(false);
+export default function App() {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsCollapsed(true);
-      } else {
-        setIsCollapsed(false);
-      }
-    };
+  const menuItems = [
+   
+"Car Tyres"
+,"Bike Tyres"
+,"Tyre Pressure",
+"Commercial Tyres",
+"Accessories",
+"More",
 
-    window.addEventListener("scroll", handleScroll);
 
-    // Cleanup event listener on component unmount
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  ];
+
   return (
-    <nav
-      className={`navbar navbar-expand-lg shadow-sm px-5 navbar-light bg-white ${
-        isCollapsed ? "collapsed" : ""
-      }`}>
-      <div className="container-fluid">
-        {/* Brand Logo */}
-        <a className="navbar-brand" href="#">
+    <Navbar onMenuOpenChange={setIsMenuOpen}>
+      <NavbarContent>
+        <NavbarMenuToggle
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          className="sm:hidden"
+        />
+        <NavbarBrand>
           <img
-            src="https://cdn.tyreplex.net/themes/moonlight/images/TP-logo.png?tr=w-150,q-60"
-            alt="TyrePlex"
-            width="150"
+            alt="logo"
             height="auto"
-          />
-        </a>
+            width="auto"
+            src="https://cdn.tyreplex.net/themes/moonlight/images/TP-logo.png?tr=w-150,q-60"></img>
+        </NavbarBrand>
+      </NavbarContent>
 
-        {/* Toggle button for mobile view */}
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
+      <NavbarContent className="hidden sm:flex gap-4" justify="center">
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Car Tyres
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Bike Tyres
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Tyre Pressure
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Commercial Tyres
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            Accessories
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link color="foreground" href="#">
+            More
+          </Link>
+        </NavbarItem>
+      </NavbarContent>
 
-        {/* Navbar links with dropdowns */}
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav mx-auto">
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="bikeTyresDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Car Tyres
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="bikeTyresDropdown">
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="//www.tyreplex.com/bike-tyres/mrf">
-                    MRF Tyres
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Apollo Tyres
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    CEAT Tyres
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="bikeTyresDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Bike Tyres
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="bikeTyresDropdown">
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="//www.tyreplex.com/bike-tyres/mrf">
-                    MRF Tyres
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 1
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 2
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="tyrePressureDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Tyre Pressure
-              </a>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="tyrePressureDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 1
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 2
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="commercialTyresDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Commercial Tyres
-              </a>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="commercialTyresDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 1
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 2
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="accessoriesDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Accessories
-              </a>
-              <ul
-                className="dropdown-menu"
-                aria-labelledby="accessoriesDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 1
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 2
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="moreDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                More
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="moreDropdown">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 1
-                  </a>
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Option 2
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
+      <NavbarContent justify="end">
+        <NavbarItem className="hidden lg:flex">
+          <Link href="#">Login</Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Button as={Link} color="primary" href="#" variant="flat">
+            Sign Up
+          </Button>
+        </NavbarItem>
+      </NavbarContent>
 
-          {/* Login Icon and Link */}
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                <i className="bi bi-person"></i> Login
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+      <NavbarMenu>
+        {menuItems.map((item, index) => (
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link
+              color={
+                index === 2
+                  ? "primary"
+                  : index === menuItems.length - 1
+                  ? "danger"
+                  : "foreground"
+              }
+              className="w-full"
+              href="#"
+              size="lg">
+              {item}
+            </Link>
+          </NavbarMenuItem>
+        ))}
+      </NavbarMenu>
+    </Navbar>
   );
 }

@@ -1,5 +1,4 @@
 import React from "react";
-import "./Reviews.css";
 
 export default function Reviews() {
   const reviews = [
@@ -42,20 +41,22 @@ export default function Reviews() {
     return text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
   };
 
-  return reviews.map((review, index) => (
-    <div className="card col-5 col-md-4 col-xs-1 mb-4 mx-3" key={index}>
-      <div className="reviews-card-body">
-        <div className="d-flex align-items-center m-2">
-          <div className="profile-icon bg-primary  p-2 text-white rounded-circle d-flex align-items-center justify-content-center me-2">
-            {review.reviewer.charAt(0)}
+  return (
+      reviews.map((review, index) => (
+        <div
+          className="bg-white col-6 ml-1 rounded-lg shadow-md p-2 flex flex-col gap-2"
+          key={index}>
+          <div className="flex items-start">
+            <div className="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center">
+              {review.reviewer.charAt(0)}
+            </div>
+            <div className="ml-3 flex-1">
+              <h6 className="text-lg font-semibold">{review.reviewer}</h6>
+              <small className="text-gray-500">{review.date}</small>
+            </div>
           </div>
-          <div className="d-flex justify-content-between w-100">
-            <h6 className="mb-1 card-title">{review.reviewer}</h6>
-            <small>{review.date}</small>
-          </div>
+          <p className="text-gray-700">{truncateReview(review.review, 150)}</p>
         </div>
-        <p className="mb-1 card-text">{truncateReview(review.review, 150)}</p>
-      </div>
-    </div>
-  ));
+      ))
+  );
 }
